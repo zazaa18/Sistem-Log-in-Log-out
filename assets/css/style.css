@@ -1,0 +1,727 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
+/* ==================================================
+   RESET & VARIABEL WARNA (SELARAS DENGAN SIDEBAR)
+================================================== */
+
+:root {
+    /* Warna Aksen Terang (Sama seperti Tombol Dashboard Aktif) */
+    --primary: #5e5ce6;
+    --primary-hover: #4e4cd4;
+    --primary-light: #f0f0ff;
+    
+    /* Gradasi Biru Tua Keunguan (Diambil Langsung dari Warna Lingkaran Bawah Sidebar) */
+    --login-deep-gradient: linear-gradient(155deg, #182348 0%, #1c2752 45%, #233166 100%);
+    
+    /* Background Input (Biru Muda Lembut) */
+    --input-bg: #edf2fc;
+    --input-border: #e3ebfa;
+    --input-focus-border: #5e5ce6;
+    --input-icon: #879ab8;
+    
+    /* Sidebar Gelap */
+    --sidebar-bg: #0f172a;
+    --sidebar-active: #5e5ce6;
+    
+    /* Halaman & Kartu */
+    --bg-page: #f3f5fd;
+    --card-bg: #ffffff;
+    --text-main: #141c30;
+    --text-muted: #64748b;
+    --border-color: #e5eaf5;
+    --shadow-card: 0 18px 45px rgba(24, 35, 72, 0.12);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background-color: var(--bg-page);
+    color: var(--text-main);
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* ==================================================
+   1. HALAMAN LOGIN
+================================================== */
+
+.login-container {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    background: 
+        radial-gradient(circle at 12% 18%, rgba(200, 198, 255, 0.45), transparent 32%),
+        radial-gradient(circle at 88% 82%, rgba(225, 224, 255, 0.5), transparent 35%),
+        var(--bg-page);
+}
+
+.login-card {
+    width: 100%;
+    max-width: 950px;
+    min-height: 530px;
+    display: flex;
+    background: var(--card-bg);
+    border-radius: 22px;
+    overflow: hidden;
+    box-shadow: var(--shadow-card);
+}
+
+/* Panel Kiri Login: Biru Tua Keunguan Pekat */
+.login-left {
+    width: 50%;
+    position: relative;
+    overflow: hidden;
+    padding: 48px 44px;
+    color: #ffffff;
+    background: var(--login-deep-gradient);
+    display: flex;
+    flex-direction: column;
+}
+
+/* Lingkaran Dekorasi Halus di Panel Kiri */
+.login-curve-shape {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.05);
+    pointer-events: none;
+}
+
+.shape-one {
+    width: 380px;
+    height: 380px;
+    right: -120px;
+    top: -60px;
+}
+
+.shape-two {
+    width: 440px;
+    height: 440px;
+    right: -170px;
+    bottom: -150px;
+}
+
+.login-left-inner {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.login-brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.brand-shield {
+    position: relative;
+    width: 36px;
+    height: 36px;
+    background: #ffffff;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.brand-shield i {
+    font-size: 21px;
+}
+
+.brand-letter {
+    position: absolute;
+    font-size: 11px;
+    font-weight: 900;
+    color: #ffffff;
+    margin-top: 1px;
+}
+
+.login-left-content {
+    margin-top: 55px;
+    max-width: 320px;
+}
+
+.login-left-content h2 {
+    font-size: 33px;
+    line-height: 1.25;
+    font-weight: 800;
+    margin-bottom: 14px;
+    letter-spacing: -0.02em;
+    color: #ffffff;
+}
+
+.login-left-content h2 span {
+    color: #c7d2fe;
+}
+
+.login-left-content p {
+    font-size: 13.5px;
+    line-height: 1.6;
+    color: #cbd5e1;
+    opacity: 0.95;
+}
+
+/* Panel Kanan Login (Form) */
+.login-right {
+    width: 50%;
+    padding: 48px 52px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: var(--card-bg);
+}
+
+.login-header {
+    text-align: center;
+    margin-bottom: 26px;
+}
+
+.login-avatar-circle {
+    width: 58px;
+    height: 58px;
+    background: var(--primary);
+    color: #ffffff;
+    border-radius: 50%;
+    margin: 0 auto 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    box-shadow: 0 6px 18px rgba(94, 92, 230, 0.32);
+}
+
+.login-header h1 {
+    font-size: 26px;
+    font-weight: 800;
+    color: var(--text-main);
+    letter-spacing: -0.02em;
+    margin-bottom: 6px;
+}
+
+.login-header p {
+    color: var(--text-muted);
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+.alert-error {
+    padding: 12px 16px;
+    margin-bottom: 18px;
+    border-radius: 10px;
+    background: #fef2f2;
+    color: #b91c1c;
+    font-size: 13px;
+    border: 1px solid #fee2e2;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.form-group {
+    margin-bottom: 16px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 7px;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text-main);
+}
+
+.input-wrapper,
+.password-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+.input-icon {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--input-icon);
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+}
+
+/* Latar Input Biru Muda */
+.input-wrapper input,
+.password-wrapper input {
+    width: 100%;
+    height: 48px;
+    padding: 0 44px;
+    border: 1px solid var(--input-border);
+    border-radius: 12px;
+    outline: none;
+    font-size: 13.5px;
+    color: var(--text-main);
+    background-color: var(--input-bg);
+    font-family: inherit;
+    transition: all 0.2s ease;
+}
+
+.input-wrapper input::placeholder,
+.password-wrapper input::placeholder {
+    color: #9cb0ce;
+    font-size: 13px;
+}
+
+.input-wrapper input:focus,
+.password-wrapper input:focus {
+    background-color: #f3f7fe;
+    border-color: var(--input-focus-border);
+    box-shadow: 0 0 0 3px rgba(94, 92, 230, 0.15);
+}
+
+.toggle-password {
+    position: absolute;
+    right: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    color: var(--input-icon);
+    padding: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+}
+
+.btn-login {
+    width: 100%;
+    height: 46px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 12px;
+    background: var(--primary);
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    font-family: inherit;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: all 0.2s ease;
+    box-shadow: 0 5px 16px rgba(94, 92, 230, 0.35);
+}
+
+.btn-login:hover {
+    background: var(--primary-hover);
+    transform: translateY(-1px);
+}
+
+.login-footer {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 32px;
+}
+
+.login-footer span {
+    height: 1px;
+    flex: 1;
+    background: var(--border-color);
+}
+
+.login-footer small {
+    color: #9aa5b8;
+    font-size: 11px;
+    white-space: nowrap;
+}
+
+/* ==================================================
+   2. HALAMAN DASHBOARD
+================================================== */
+
+.dashboard-container {
+    display: flex;
+    min-height: 100vh;
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* Sidebar dengan Lengkungan Lingkaran Biru Tua Keunguan */
+.sidebar {
+    width: 250px;
+    background: #0d1424;
+    color: #ffffff;
+    padding: 28px 18px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+    z-index: 5;
+}
+
+/* Bentuk Lingkaran Pojok Bawah Sidebar */
+.sidebar::after {
+    content: '';
+    position: absolute;
+    bottom: -120px;
+    left: -120px;
+    width: 320px;
+    height: 320px;
+    border-radius: 50%;
+    background: #1b264f;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.sidebar-logo,
+.sidebar-menu {
+    position: relative;
+    z-index: 2;
+}
+
+.sidebar-logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 0 10px 36px;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.sidebar-logo .logo-icon {
+    width: 36px;
+    height: 36px;
+    background: transparent;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 26px;
+    color: #ffffff;
+}
+
+.sidebar-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    flex: 1;
+}
+
+.menu-item {
+    text-decoration: none;
+    color: #94a3b8;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 12px 18px;
+    border-radius: 12px;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.menu-item:hover {
+    background: rgba(255, 255, 255, 0.05);
+    color: #ffffff;
+}
+
+.menu-item.active {
+    background: var(--primary);
+    color: #ffffff;
+    font-weight: 600;
+    box-shadow: 0 6px 18px rgba(94, 92, 230, 0.35);
+}
+
+.menu-icon {
+    width: 20px;
+    text-align: center;
+    font-size: 16px;
+}
+
+.sidebar-divider {
+    height: 1px;
+    background: rgba(255, 255, 255, 0.08);
+    margin: 16px 6px;
+}
+
+.logout-menu {
+    color: #94a3b8;
+    margin-top: 4px;
+}
+
+.logout-menu:hover {
+    background: rgba(239, 68, 68, 0.12);
+    color: #fca5a5;
+}
+
+/* Main Content & Latar Halaman */
+.main-content {
+    flex: 1;
+    min-width: 0;
+    background: var(--bg-page);
+    position: relative;
+}
+
+.bg-shape-dashboard {
+    position: absolute;
+    top: -80px;
+    right: -80px;
+    width: 480px;
+    height: 480px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(200, 198, 255, 0.45) 0%, rgba(243, 245, 253, 0) 70%);
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* Topbar */
+.topbar {
+    height: 74px;
+    background: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 40px;
+    border-bottom: 1px solid var(--border-color);
+    position: relative;
+    z-index: 2;
+}
+
+.admin-profile {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--text-main);
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    user-select: none;
+}
+
+.profile-avatar {
+    color: var(--primary);
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.profile-arrow {
+    color: var(--input-icon);
+    font-size: 11px;
+}
+
+/* Kartu Sambutan Dashboard */
+.dashboard-content {
+    padding: 40px;
+    position: relative;
+    z-index: 2;
+}
+
+.dashboard-card {
+    background: #ffffff;
+    max-width: 1100px;
+    margin: 0 auto;
+    border-radius: 20px;
+    padding: 44px 50px;
+    box-shadow: var(--shadow-card);
+    position: relative;
+    overflow: hidden;
+}
+
+.card-bg-circle {
+    position: absolute;
+    bottom: -70px;
+    right: -40px;
+    width: 420px;
+    height: 360px;
+    border-radius: 50% 40% 60% 50% / 60% 50% 50% 40%;
+    background: #f0f2fe;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.welcome-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+    position: relative;
+    z-index: 2;
+}
+
+.welcome-text {
+    flex: 1.1;
+    min-width: 320px;
+}
+
+.dashboard-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--primary-light);
+    color: var(--primary);
+    padding: 6px 14px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.welcome-text h1 {
+    font-size: 38px;
+    line-height: 1.2;
+    font-weight: 800;
+    color: var(--text-main);
+    margin-bottom: 16px;
+    letter-spacing: -0.02em;
+}
+
+.welcome-text h1 span {
+    color: var(--primary);
+}
+
+.welcome-text p {
+    color: var(--text-muted);
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 28px;
+    max-width: 440px;
+}
+
+.email-info {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    width: fit-content;
+    padding: 10px 18px;
+    background: #ffffff;
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+}
+
+.email-icon {
+    width: 38px;
+    height: 38px;
+    border-radius: 10px;
+    background: var(--primary-light);
+    color: var(--primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+}
+
+.email-text small {
+    display: block;
+    color: var(--input-icon);
+    font-size: 11px;
+}
+
+.email-text strong {
+    color: var(--text-main);
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.welcome-illustration {
+    flex: 1.1;
+    max-width: 500px;
+    height: 310px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    position: relative;
+}
+
+.welcome-illustration svg {
+    overflow: visible;
+}
+
+/* ==================================================
+   3. RESPONSIF
+================================================== */
+
+@media (max-width: 900px) {
+    .dashboard-content {
+        padding: 24px;
+    }
+
+    .welcome-content {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .welcome-illustration {
+        width: 100%;
+        max-width: 420px;
+        height: 250px;
+        margin: 20px auto 0;
+        justify-content: center;
+    }
+
+    .card-bg-circle {
+        width: 300px;
+        height: 250px;
+        bottom: -30px;
+        right: -20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .login-card {
+        flex-direction: column;
+        max-width: 460px;
+    }
+
+    .login-left {
+        display: none;
+    }
+
+    .login-right {
+        width: 100%;
+        padding: 40px 28px;
+    }
+
+    .sidebar {
+        width: 72px;
+        padding: 20px 10px;
+    }
+
+    .sidebar::after {
+        display: none;
+    }
+
+    .sidebar-logo span,
+    .menu-item span:last-child {
+        display: none;
+    }
+
+    .sidebar-logo .logo-icon {
+        margin: 0 auto;
+    }
+
+    .menu-item {
+        justify-content: center;
+        padding: 12px 0;
+    }
+
+    .topbar {
+        padding: 0 20px;
+    }
+}
